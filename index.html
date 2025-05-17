@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Web Dev - RSV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+
+        <!-- Section d'accueil -->
+        <section id="welcome-screen" class="quiz-section active">
+            <h1>Bienvenue au Quiz Web Dev !</h1>
+            <p>Testez vos connaissances sur les bases du développement web basées sur nos sessions.</p>
+            <div class="input-group">
+                <label for="firstName">Prénom :</label>
+                <input type="text" id="firstName" required>
+                <div id="firstName-error" class="validation-error"></div> <!-- Espace pour l'erreur -->
+            </div>
+            <div class="input-group">
+                <label for="lastName">Nom :</label>
+                <input type="text" id="lastName"> <!-- Nom est facultatif -->
+            </div>
+            <button id="startButton">Commencer le Quiz</button>
+        </section>
+
+        <!-- Section de transition/salutation -->
+        <section id="greeting-screen" class="quiz-section">
+            <h1 id="greeting-message">Let's Go !</h1>
+            <p>Bonne chance pour ce quiz !</p>
+            <!-- Le quiz commencera automatiquement après un court délai -->
+        </section>
+
+        <!-- Section du Quiz -->
+        <section id="quiz-screen" class="quiz-section">
+            <div id="quiz-header">
+                 <div id="timer-area">Temps restant : <span id="time"></span>s</div>
+                <div id="progress">Question <span id="current-question-number">0</span> / <span id="total-questions">0</span></div>
+            </div>
+            <div id="timer-bar-container"> <!-- Conteneur pour la barre de timer -->
+                <div id="timer-bar"></div> <!-- La barre elle-même -->
+            </div>
+
+            <h2 id="question-text"></h2>
+            <div id="options-area" class="options">
+                <!-- Les options (radio buttons) seront insérées ici par JS -->
+            </div>
+            <button id="validateButton">Valider la réponse</button>
+            <div id="feedback-area" class="feedback">
+                <!-- Le feedback (félicitations/oups/timeout) sera affiché ici -->
+            </div>
+             <button id="nextButton" class="hidden">Question Suivante</button>
+        </section>
+
+        <!-- Section de fin de quiz -->
+        <section id="end-screen" class="quiz-section">
+            <h1>Quiz Terminé !</h1>
+            <p id="final-score">Votre score : 0 / 0</p>
+            <p>Merci d'avoir participé !</p>
+            <button id="restartButton">Recommencer le Quiz</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
